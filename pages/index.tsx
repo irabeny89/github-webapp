@@ -6,6 +6,7 @@ import SearchBox from "../components/SearchBox";
 import ResultTable from "../components/ResultTable";
 import Footer from "../components/Footer";
 import SearchProvider from "@/components/SearchProvider";
+import ToastAlert from "@/components/ToastAlert";
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
         Get started by using the search box...
       </p>
       <SearchProvider>
+        <ToastAlert />
         <SearchBox />
         <ResultTable />
       </SearchProvider>
