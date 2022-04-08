@@ -73,7 +73,6 @@ export default function ResultTable() {
           <Table striped bordered hover size="sm" responsive>
             <thead>
               <tr>
-                <th>#</th>
                 <th>Repo Name</th>
                 <th>Author Name</th>
                 <th>Stars</th>
@@ -81,18 +80,14 @@ export default function ResultTable() {
             </thead>
             <tbody>
               {searchData?.items?.map(
-                (
-                  {
-                    id,
-                    owner: { login, html_url: _html_url },
-                    stargazers_count,
-                    name,
-                    html_url,
-                  },
-                  i
-                ) => (
+                ({
+                  id,
+                  owner: { login, html_url: _html_url },
+                  stargazers_count,
+                  name,
+                  html_url,
+                }) => (
                   <tr key={id}>
-                    <td>{++i}</td>
                     <td>
                       <a href={html_url}>{name}</a>
                     </td>
