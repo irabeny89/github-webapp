@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import SearchBox from "../components/SearchBox";
 import ResultTable from "../components/ResultTable";
 import Footer from "../components/Footer";
+import SearchDataProvider from "@/components/SearchDataProvider";
 
 const Home: NextPage = () => {
   return (
@@ -18,8 +19,10 @@ const Home: NextPage = () => {
       <p className={styles.description}>
         Get started by using the search box...
       </p>
-      <SearchBox />
-      <ResultTable />
+      <SearchDataProvider>
+        <SearchBox />
+        <ResultTable />
+      </SearchDataProvider>
       <Footer />
     </Container>
   );
