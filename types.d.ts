@@ -23,3 +23,16 @@ type SearchDataType = {
   incomplete_results: boolean;
   items: SearchDataItemType[];
 };
+
+type InitialSearchStateType = {
+  searchTerm: string;
+  searchData: SearchDataType;
+  errorMessage: string;
+};
+
+type ConstantsType = "setSearchTerm" | "setSearchData" | "setErrorMessage";
+
+type InitialSearchStateActionType = {
+  type: ConstantsType;
+  value: InitialSearchStateType[keyof InitialSearchStateType];
+};
