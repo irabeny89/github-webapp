@@ -1,9 +1,4 @@
 import {
-  SET_SEARCH_DATA,
-  SET_ERROR_MESSAGE,
-  SET_SEARCH_TERM,
-} from "constants/index";
-import {
   InitialSearchStateActionType,
   InitialSearchStateType,
   SearchDataType,
@@ -13,11 +8,11 @@ const searchReducer = (
   state: InitialSearchStateType,
   { type, value }: InitialSearchStateActionType
 ): InitialSearchStateType =>
-  type === SET_ERROR_MESSAGE
+  type === "setErrorMessage"
     ? { ...state, errorMessage: value as string }
-    : type === SET_SEARCH_DATA
+    : type === "setSearchData"
     ? { ...state, searchData: value as SearchDataType }
-    : type === SET_SEARCH_TERM
+    : type === "setSearchTerm"
     ? { ...state, searchTerm: value as string }
     : state;
 
