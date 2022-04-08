@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import searchReducer from "reducers/searchReducer";
-import type { InitialSearchStateType, SearchDataProviderType } from "types";
+import type { SearchDataProviderType } from "types";
 import SearchContext, { initialState } from "contexts/SearchContext";
 
 export default function SearchDataProvider({
