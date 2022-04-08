@@ -11,43 +11,55 @@ import { generateUri } from "@/utils/index";
 import SearchContext from "@/contexts/SearchContext";
 
 export default function ResultTable() {
-  const [{ searchData, searchTerm }, dispatch] =
-      useContext(SearchContext),
+  const [{ searchData, searchTerm }, dispatch] = useContext(SearchContext),
     [isLoadingPrev, setLoadingPrev] = useState(false),
     [isLoadingNext, setLoadingNext] = useState(false),
     pageNumber = useRef(1);
 
   const handlePreviousPage = async () => {
-    pageNumber.current > 1 && setLoadingPrev(true),
+    pageNumber.current > 1 &&
+      (setLoadingPrev(true),
       github(generateUri(searchTerm, pageNumber.current - 1))
-        .then(({ data }: any) => (setLoadingPrev(false), dispatch({
-          type: "setSearchData",
-          value: data
-        })))
+        .then(
+          ({ data }: any) => (
+            setLoadingPrev(false),
+            --pageNumber.current,
+            dispatch({
+              type: "setSearchData",
+              value: data,
+            })
+          )
+        )
         .catch(
           (error: any) => (
             console.error(error),
             dispatch({
               type: "setErrorMessage",
-              value: error.message
+              value: error.message,
             }),
             setLoadingPrev(false)
           )
-        );
+        ));
   };
   const handleNextPage = async () => {
     setLoadingNext(true),
       github(generateUri(searchTerm, pageNumber.current + 1))
-        .then(({ data }: any) => (setLoadingNext(false), dispatch({
-          type: "setSearchData",
-          value: data
-        })))
+        .then(
+          ({ data }: any) => (
+            setLoadingNext(false),
+            ++pageNumber.current,
+            dispatch({
+              type: "setSearchData",
+              value: data,
+            })
+          )
+        )
         .catch(
           (error: any) => (
             console.error(error),
             dispatch({
               type: "setErrorMessage",
-              value: error.message
+              value: error.message,
             }),
             setLoadingNext(false)
           )
