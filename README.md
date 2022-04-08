@@ -1,22 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GitHub Repositories Search App
+
+> This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+This app uses [GitHub API](https://api.github.com/en/rest/reference/search#search-repositories) to search through repositories based on input from the user. The results are rendered on a table.
 
 ## Getting Started
 
-First, run the development server:
+> Note: [PNPM](https://pnpm.io) was used when developing this web app.
+> If you will be using any other package manager remember to `DELETE` the `pnpm-lock.yaml` file at the root directory.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### How to start development server
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Clone this [repository](https://github.com/irabeny89/github-webapp).
+- Install dependencies using `pnpm i` or `npm i` or `yarn i`.
+- Then start the development server using `pnpm dev` or `npm dev` or `yarn dev`.
+- Use `pnpm test` or `npm test` or `yarn test` to start the test.
 
 ## Learn More
 
@@ -24,8 +22,8 @@ To learn more about Next.js, take a look at the following resources:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [GitHub API Documentations](https://api.github.com) - learn about the GitHub features and API.
+- [PNPM](https://pnpm.io) - learn about the PNPM package manager features and CLI commands.
 
 ## Deploy on Vercel
 
