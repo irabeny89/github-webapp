@@ -1,7 +1,7 @@
 import ToastContainer from "react-bootstrap/ToastContainer";
 import Toast from "react-bootstrap/Toast";
 import { useContext } from "react";
-import SearchContext from "@/contexts/SearchContext";
+import SearchContext from "contexts/SearchContext";
 
 export default function ToastAlert() {
   const [{ errorMessage }, dispatch] = useContext(SearchContext)

@@ -6,9 +6,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import { FormEvent, useContext, useState } from "react";
-import github from "../axios";
-import { generateUri } from "@/utils/index";
-import SearchContext from "@/contexts/SearchContext";
+import github from "utils/axios";
+import { generateUri } from "utils/index";
+import SearchContext from "contexts/SearchContext";
 
 export default function SearchBox() {
   const [isLoading, setLoading] = useState(false),

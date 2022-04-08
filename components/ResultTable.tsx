@@ -6,9 +6,9 @@ import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { useContext, useRef, useState } from "react";
-import github from "../axios";
-import { generateUri } from "@/utils/index";
-import SearchContext from "@/contexts/SearchContext";
+import github from "utils/axios";
+import { generateUri } from "utils/index";
+import SearchContext from "contexts/SearchContext";
 
 export default function ResultTable() {
   const [{ searchData, searchTerm }, dispatch] = useContext(SearchContext),
