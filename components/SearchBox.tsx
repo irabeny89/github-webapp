@@ -13,7 +13,7 @@ import SearchContext from "contexts/SearchContext";
 export default function SearchBox() {
   const [isLoading, setLoading] = useState(false),
     [, dispatch] = useContext(SearchContext),
-    handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       const searchTerm = new FormData(e.currentTarget).get("search") as string;
       // if input is empty do not send network request

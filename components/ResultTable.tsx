@@ -16,7 +16,7 @@ export default function ResultTable() {
     [isLoadingNext, setLoadingNext] = useState(false),
     pageNumber = useRef(1);
 
-  const handlePreviousPage = async () => {
+  const handlePreviousPage = () => {
     pageNumber.current > 1 &&
       (setLoadingPrev(true),
       github(generateUri(searchTerm, pageNumber.current - 1))
@@ -41,7 +41,7 @@ export default function ResultTable() {
           )
         ));
   };
-  const handleNextPage = async () => {
+  const handleNextPage = () => {
     setLoadingNext(true),
       github(generateUri(searchTerm, pageNumber.current + 1))
         .then(
