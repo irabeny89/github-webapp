@@ -7,6 +7,7 @@ import ResultTable from "../components/ResultTable";
 import Footer from "../components/Footer";
 import SearchProvider from "@/components/SearchProvider";
 import ToastAlert from "@/components/ToastAlert";
+import Pagination from "@/components/Pagination";
 
 const Home: NextPage = () => {
   return (
@@ -24,6 +25,7 @@ const Home: NextPage = () => {
         <ToastAlert />
         <SearchBox />
         <ResultTable />
+        <Pagination />
       </SearchProvider>
       <Footer />
     </Container>
