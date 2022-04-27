@@ -61,6 +61,11 @@ describe("Home page test", () => {
   });
   afterAll(() => testServer.close());
 
+  it("has a title", () =>
+    expect(screen.getByRole("heading")).toHaveTextContent(
+      "GitHub Repositories Search"
+    ));
+
   it("doesn't search when text box is empty.", async () => {
     const textBox = screen.getByRole("textbox"),
       searchButton = screen.getByRole("button", {
@@ -113,5 +118,11 @@ describe("Home page test", () => {
     // go back to previous page
     await user.click(prevButton);
     expect(await screen.findByText(searchTerm)).toBeInTheDocument();
+  });
+
+  it("match snapshot", () => {
+    const mainElement = screen.getByRole("main");
+
+    expect(mainElement).toMatchSnapshot();
   });
 });
