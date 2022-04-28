@@ -61,7 +61,7 @@ describe("Home page test", () => {
   });
   afterAll(() => testServer.close());
 
-  it("has a title", () =>
+  it("has a title.", () =>
     expect(screen.getByRole("heading")).toHaveTextContent(
       "GitHub Repositories Search"
     ));
@@ -120,7 +120,7 @@ describe("Home page test", () => {
     expect(await screen.findByText(searchTerm)).toBeInTheDocument();
   });
 
-  it("match snapshot", () => {
+  it("match snapshot.", () => {
     const mainElement = screen.getByRole("main");
 
     expect(mainElement).toMatchSnapshot();
